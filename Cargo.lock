@@ -3,5 +3,5 @@
 version = 4
 
 [[package]]
-name = "aux"
+name = "ft_lib"
 version = "0.1.0"
