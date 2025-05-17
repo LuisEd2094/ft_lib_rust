@@ -1,8 +1,7 @@
 use std::io::Write;
 
-extern crate termion;
-
 use std::io::{stdin, stdout};
+use termion::clear;
 use termion::cursor;
 use termion::event::Key;
 use termion::input::TermRead;
@@ -50,10 +49,9 @@ pub fn ft_get_input() -> Option<String> {
         write!(
             stdout,
             "\r> {}{}",
-            &input[..cursor_pos],
-            &input[cursor_pos..]
-        )
-        .unwrap();
+            input,
+            clear::UntilNewline
+        ).unwrap();
         if cursor_pos < input.len() {
             write!(
                 stdout,
